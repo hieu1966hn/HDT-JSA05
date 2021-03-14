@@ -2,14 +2,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
 }
 
 /* file sử dụng để tận dụng các css giống nhau giữa 
 các trang  */
 
-
-.input-wrapper input{
+.input-wrapper input {
     outline: none;
     border: 1px solid #dbdbdb;
     padding: 10px 15px;
@@ -17,10 +15,27 @@ các trang  */
     width: 100%;
 }
 
-.input-wrapper{
+.input-wrapper {
     margin-bottom: 10px;
 }
 
-.btn{
-    
+.btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #1f6ac4;
+    outline: none;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.form-action span {
+    font-size: 25px;
 }

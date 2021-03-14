@@ -1,6 +1,6 @@
 const init = () => {
     console.log(" windown loaded");
-    view.setActiveScreen('welcomeScreen');
+    view.setActiveScreen('registerScreen');
 };
 
 
