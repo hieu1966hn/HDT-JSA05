@@ -15,12 +15,12 @@ component.registerScreen = `
                 <form id="register-form">
                     <div class="input-name-wrapper">
                         <div class="input-wrapper">
-                            <input type="text" name="firstName" placeholder="Pls input your FN">
+                            <input type="text" name="firstName" placeholder="Pls input your first name">
                             <div class="error" id="first-name-error"></div>
                         </div>
 
                         <div class="input-wrapper">
-                            <input type="text" name="lastName" placeholder="Pls input your LN">
+                            <input type="text" name="lastName" placeholder="Pls input your last name">
                             <div class="error" id="last-name-error"></div>
                         </div>
                     </div>
