@@ -31,13 +31,22 @@ controller.register = (data) => {
     if (data.confirmPassword === "") {
         document.getElementById('confirm-password-error').innerText = "please input confirm password"
     }
-    else if(data.confirmPassword.trim() !== data.password.trim()){
+    else if (data.confirmPassword.trim() !== data.password.trim()) {
         document.getElementById('confirm-password-error').innerText = "Password does not match"
     }
-    else{
+    else {
         document.getElementById('confirm-password-error').innerText = ""
     }
 
 
-    
+    /// bươc kiểm tra điều kiện đăng kí
+    if (data.firstName !== "" &&
+        data.lastName !== "" &&
+        data.email !== "" &&
+        data.password !== "" &&
+        data.confirmPassword !== "" &&
+        data.password === data.confirmPassword
+    ) {
+        model.register(data); // truyền dữ liệu mình nhập vào model.js
+    }
 }
