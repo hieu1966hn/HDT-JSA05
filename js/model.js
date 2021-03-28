@@ -35,6 +35,22 @@ model.register = async (data) => {
     }
 }
 
-model.login = () => {
+model.login = async (dataLogin) => {
+    try {
+        const response = await firebase // await để đợi firebase phản hồi
+            .auth()
+            .signInWithEmailAndPassword(dataLogin.email, dataLogin.password);
 
+    }
+    catch (err) { // err: là 1 object chứa rất nhiều trường trong đó
+        // xet loi email truoc
+        if (err.code == 'auth/user-not-found'  // day là các tin nhắn mặc định của firebase
+            || err.code == "auth/invalid-email"   // sẽ có video giải thích vì sao lại vậy
+        ) {
+            document.getElementById('email-error').innerText = `${err.message}`
+        }
+        else if (err.code == 'auth/wrong-password') {
+            document.getElementById('password-error').innerText = `${err.message}`
+        }
+    }
 }
