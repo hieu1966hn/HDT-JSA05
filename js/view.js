@@ -32,8 +32,18 @@ view.setActiveScreen = (screenName) => {
 
             document.getElementById('redirect-to-register').addEventListener('click', () => {
                 view.setActiveScreen('registerScreen');
+            });
+
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit',(event)=>{
+                event.preventDefault(); // tránh load lại trình duyệt 
+                const dataLogin = {
+                    email: loginForm.email.value,
+                    password:loginForm.password.value
+                }
+                controller.login(dataLogin);// chưa có, giờ mình đi tạo. Để xét các trương hợp có lỗi, if(lỗi ) => ko cho submit
             })
-            
+
             break;
     }
 }

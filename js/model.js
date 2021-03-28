@@ -34,3 +34,7 @@ model.register = async (data) => {
         alert(err.message);
     }
 }
+
+model.login = () => {
+
+}

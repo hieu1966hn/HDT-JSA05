@@ -50,3 +50,27 @@ controller.register = (data) => {
         model.register(data); // truyền dữ liệu mình nhập vào model.js
     }
 }
+
+
+
+controller.login = (dataLogin) => {
+    if (dataLogin.email.trim() === "") {
+        document.getElementById('email-error').innerText = "please input email";
+    }
+    else {
+        document.getElementById('email-error').innerText = "";
+    }
+
+    if (dataLogin.password.trim() === "") {
+        document.getElementById('password-error').innerText = "please type password";
+    }
+    else {
+        document.getElementById('password-error').innerText = "";
+    }
+
+
+    if (dataLogin.email !== "" && dataLogin.password !== "") {
+        model.login(dataLogin); // dữ liệu đã được lọc sạch. => gửi lên firebase xác thực
+    }
+
+}
