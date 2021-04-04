@@ -1,5 +1,5 @@
 const model = {};
-model.currentUser = undefined;
+model.currentUser = undefined; // khoi tao nguoi dung hien tai
 
 
 model.register = async (data) => {

@@ -19,18 +19,47 @@ const init = () => {
 
 
     /// lắng nghe sự thay đổi của user
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) { // neu ton tai user thi =>
-            console.log("user",user); // in ra user da
-            view.setActiveScreen('chatScreen');
-          // User is signed in.
-        } else {
-          // No user is signed in.
-        }
-      });
+            // console.log("user", user);
+            model.currentUser = {
+                email: user.email,
+                displayName: user.displayName
+            }
 
+            // console.log("user", user); // in ra user da
+            view.setActiveScreen('chatScreen');
+            // User is signed in.
+        } else {
+            // No user is signed in.
+            view.setActiveScreen('loginScreen');
+        }
+    });
+
+
+
+    // dataBase
+    firestoreFunction(); // thao tac  voi data base
 
 };
 
 
 window.onload = init; // khi web chay xong  thì chạy vào đây
+
+///viet ham de thuc hien C,R,U,D voi database
+const firestoreFunction = async () => {
+
+// get one document
+const documentId = 'h9cojoDyPu4DLZjO2zJl' // lay id 
+const response = await firebase.firestore().collection('users').doc(documentId).get();
+
+
+console.log(response.data());
+
+// get many document
+
+// update user
+
+// delete user
+
+}

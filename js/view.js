@@ -5,11 +5,7 @@ view.setActiveScreen = (screenName) => {
             // console.log(model.currentUser);
             
             document.getElementById('app').innerHTML = component.chatScreen;
-
-
-
-            
-            document.getElementById('hi').innerHTML = `Welcome to my ${model.currentUser.displayName} screen`;
+            document.getElementById('hi').innerText = `Welcome to my ${model.currentUser.displayName} screen`;
             break;
 
 
