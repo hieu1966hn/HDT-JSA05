@@ -1,8 +1,15 @@
 const view = {};
 view.setActiveScreen = (screenName) => {
     switch (screenName) {
-        case "welcomeScreen":
-            document.getElementById('app').innerHTML = component.welcomeScreen;
+        case "chatScreen":
+            // console.log(model.currentUser);
+            
+            document.getElementById('app').innerHTML = component.chatScreen;
+
+
+
+            
+            document.getElementById('hi').innerHTML = `Welcome to my ${model.currentUser.displayName} screen`;
             break;
 
 

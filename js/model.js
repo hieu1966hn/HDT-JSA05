@@ -1,4 +1,6 @@
 const model = {};
+model.currentUser = undefined;
+
 
 model.register = async (data) => {
     //async - await: để đợi server trả về giá trị rồi mới thực hiện tiếp code
@@ -35,22 +37,26 @@ model.register = async (data) => {
     }
 }
 
-model.login = async (dataLogin) => {
+model.login = async (dataLogin) => { // thao tác với firebase
     try {
         const response = await firebase // await để đợi firebase phản hồi
             .auth()
             .signInWithEmailAndPassword(dataLogin.email, dataLogin.password);
 
-    }
+    } // chay xong try la da login
     catch (err) { // err: là 1 object chứa rất nhiều trường trong đó
         // xet loi email truoc
+        console.log("err", err);
         if (err.code == 'auth/user-not-found'  // day là các tin nhắn mặc định của firebase
             || err.code == "auth/invalid-email"   // sẽ có video giải thích vì sao lại vậy
-        ) {
-            document.getElementById('email-error').innerText = `${err.message}`
+        ) 
+        {
+            document.getElementById('email-error').innerText = err.message;
         }
+
         else if (err.code == 'auth/wrong-password') {
-            document.getElementById('password-error').innerText = `${err.message}`
+            console.log("err:", err);
+            document.getElementById('password-error').innerText = err.message;
         }
     }
 }

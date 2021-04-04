@@ -1,8 +1,8 @@
 const component = {};
 
 
-component.welcomeScreen = `
-    <h1>Welcome to my Screen</h1>
+component.chatScreen = `
+    <h1 id="hi">Welcome to my Screen </h1>
 `;
 
 component.registerScreen = `
