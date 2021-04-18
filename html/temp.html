@@ -9,43 +9,70 @@
     <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/chatScreen.css">
 </head>
 
 <body>
     <div id="app">
-        <div class="login-container">
-            <div class="aside-right">
-                <div class="header">
-                    <h3>Mindx Chat</h3>
+        <div class="chat-container">
+            <div class="header">
+                <h1>Mindx chat</h1>
+            </div>
+            <div class="side-bar">
+
+            </div>
+            <div class="main">
+                <div class="aside-left">
+                    <div class="create-conversation">
+                        <button class="btn">
+                            + New conversation
+                        </button>
+                    </div>
+                    <div class="list-conversation">
+
+                    </div>
                 </div>
-
-                <form id="login-form">
-                    
-
-                    <div class="input-wrapper">
-                        <input type="email" name="email" placeholder="Input your email">
-                        <div class="error" id="email-error"></div>
+                <div class="conversation-detail">
+                    <div class="conversation-header">
+                        First conversation
                     </div>
+                    <div class="list-messages">
+                        <div class="message-container mine">
+                            <div class="content">
+                                hello world
+                            </div>
+                        </div>
 
-                    <div class="input-wrapper">
-                        <input type="password" name="password" placeholder="Type your Password">
-                        <div class="error" id="password-error"></div>
+                        <div class="message-container their">
+                            <div class="owner">
+                                abcxyz@gmail.com
+                            </div>
+                            <div class="content">
+                                hiiiiiiiii
+                            </div>
+                        </div>
                     </div>
+                    <form id="send-messages-form">
+                        <div class="input-wrapper">
+                            <input type="text" name="message" placeholder="Type a message">
+                        </div>
+                        <button class="btn" type="submit">
+                            Send
+                        </button>
+                    </form>
+                </div>
+                <div class="aside-right">
+                    <div class="list-users">
 
-                    
-
-                    <!-- xong het phan input -->
-
-                    <div class="form-action">
-                        <span class="cursor-pointer" id="redirect-to-register">Don't have an account? register</span>
                     </div>
-
-                    <button class="btn" type="submit">
-                        Login
-                    </button>
-                </form>
-
-
+                    <form id="add-user-form" >
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="Input friend email" name="email">
+                            <div class="error" id="add-user-email-error"></div>
+                        </div>
+                        <button class="btn" type="submit">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
 

@@ -1,0 +1,117 @@
+.chat-container .chat-header h1 {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 50px;
+}
+
+.chat-container {
+    height: 100vh;
+}
+
+.chat-container .main {
+    height: calc(100%-64px);
+    display: flex;
+    flex-direction: row;
+}
+
+.main .conversation-detail .conversation-header {
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    font-size: 32px;
+    border-bottom: 0.5px solid #cfcccc;
+}
+
+.header .side-bar {
+    position: absolute;
+    color: black;
+    display: none;
+}
+
+.chat-container .main .conversation-detail {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 85%;
+}
+
+.conversation-detail .list-messages {
+    flex-grow: 1;
+}
+
+#send-messages-form .input-wrapper{
+    margin-bottom: 0px;
+}
+
+
+#send-messages-form .input-wrapper input{
+    border: none;
+    border-top: 1px solid #dbdbdb;
+    height: 64px;
+}
+
+
+#send-messages-form{
+    position: relative;
+}
+
+
+#send-messages-form button{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+    background:none ;
+    color: blue;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+#send-messages-form button:hover{
+    opacity: 0.6;
+}
+
+#send-messages-form button:active{
+    transform: scale(1.2);
+    color: purple;
+}
+
+.chat-container .list-messages{
+    padding: 10px;
+    
+}
+
+
+.chat-container .list-messages .message-container{
+    margin-bottom: 3px;
+}
+
+.chat-container .message-container  .content{
+    padding: 7px 10px;
+    border-radius: 5px;
+    max-width: 40%;
+    width: max-content;
+
+}
+
+.chat-container .message-container.their .content{
+    background: #b9b9b9;
+}
+
+.chat-container .message-container.mine .content{
+    background: #383ac2;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.chat-container .aside-left{
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid #dbdbdb;
+}
+
+
+
+
+
