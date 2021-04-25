@@ -2,7 +2,67 @@ const component = {};
 
 
 component.chatScreen = `
-    <h1 id="hi">Welcome to my Screen </h1>
+<div class="chat-container">
+<div class="header">
+    <h1>MindX chat</h1>
+</div>
+<div class="side-bar">
+
+</div>
+<div class="main">
+    <div class="aside-left">
+        <div class="create-conversation">
+            <button class="btn">
+                + New conversation
+            </button>
+        </div>
+        <div class="list-conversation">
+
+        </div>
+    </div>
+    <div class="conversation-detail">
+        <div class="conversation-header">
+            First conversation
+        </div>
+        <div class="list-messages">
+            <div class="message-container mine">
+                <div class="content">
+                    hello world
+                </div>
+            </div>
+
+            <div class="message-container their">
+                <div class="owner">
+                    abcxyz@gmail.com
+                </div>
+                <div class="content">
+                    hiiiiiiiii
+                </div>
+            </div>
+        </div>
+        <form id="send-messages-form">
+            <div class="input-wrapper">
+                <input type="text" autocomplete="off" name="message" placeholder="Type a message">
+            </div>
+            <button class="btn" type="submit">
+                Send
+            </button>
+        </form>
+    </div>
+    <div class="aside-right">
+        <div class="list-users">
+
+        </div>
+        <form id="add-user-form">
+            <div class="input-wrapper">
+                <input type="text" placeholder="Input friend email" name="email">
+                <div class="error" id="add-user-email-error"></div>
+            </div>
+            <button class="btn" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+</div>
 `;
 
 component.registerScreen = `

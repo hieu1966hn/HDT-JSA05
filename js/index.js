@@ -22,6 +22,10 @@ const init = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) { // neu ton tai user thi =>
       console.log("user", user); // in ra user da
+      model.currentUser={
+        email: user.email,
+        displayName: user.displayName
+      }
       view.setActiveScreen('chatScreen');
       // User is signed in.
     } else {
