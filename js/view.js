@@ -57,7 +57,7 @@ view.setActiveScreen = (screenName) => {
                 }
 
                 const myLove ={
-                    owner: "Ngọc Trinh",
+                    owner: "Phuong thao panda",
                     content: sendMessageForm.message.value + " too"
                 }
 
