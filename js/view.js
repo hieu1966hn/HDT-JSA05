@@ -48,12 +48,14 @@ view.setActiveScreen = (screenName) => {
             // console.log(model.currentUser);
 
             document.getElementById('app').innerHTML = component.chatScreen;
+
             const sendMessageForm = document.getElementById('send-messages-form');
             sendMessageForm.addEventListener('submit', (event) => {
                 event.preventDefault();
                 const message = {
                     owner: model.currentUser.email, // hien thi email cua nguoi chat
-                    content: sendMessageForm.message.value
+                    content: sendMessageForm.message.value,
+                    createAt: (new Date()).toISOString()
                 }
 
                 const myLove ={
@@ -61,12 +63,54 @@ view.setActiveScreen = (screenName) => {
                     content: sendMessageForm.message.value + " too"
                 }
 
+                // model.addMessage(message);
+
                 view.addMessage(message); // de day no vao list chat
                 view.addMessage(myLove);
                 sendMessageForm.message.value = "";
             });
 
+            /// mới vào sẽ hiển thị lên cuộc hội thoại
+            // model.loadConversations();
+
+            // //lang nghe tat ca thay doi trong cuoc hoi thoai
+            // model.listenConversationsChange();
+
+
+            // view.showConversation(); // hien thi toan bo cuoc tro chuyen
+            // view.showCurrentConversation(); // hien thi cuoc tro chuyen minh dang nhan 
+            
+            const signOutButton = document.getElementById("sign-out");
+            signOutButton.addEventListener('click', ()=>{
+                firebase.auth().signOut();
+                view.setActiveScreen("loginScreen");
+            })
+
+            document.querySelector(".create-conversation .btn").addEventListener('click',()=>{
+                view.setActiveScreen('createConversation');
+            })
             break;
+
+            /// Màn hình create-conversation
+        case 'createConversation':
+            document.getElementById('app').innerHTML = component.createConversation;
+            document.getElementById('back-to-chat').addEventListener('click',()=>{
+                view.setActiveScreen("chatScreen",true);
+            });
+
+            const createConversation = document.getElementById("create-conversation-form");
+            createConversation.addEventListener("submit",(event)=>{
+                event.preventDefault();
+                const newConversation ={ // lưu cuộc trò truyện mới tạo vào object
+                    conversationTitle: createConversation.conversationTitle.value,
+                    conversationEmail: createConversation.conversationEmail.value
+                }
+                // console.log(newConversation);
+                controller.createConversationScreen(newConversation);
+            })
+
+
+        break;
     }
 }
 

@@ -39,3 +39,7 @@ các trang  */
 .form-action span {
     font-size: 25px;
 }
+
+.cursor{
+    cursor: pointer;
+}

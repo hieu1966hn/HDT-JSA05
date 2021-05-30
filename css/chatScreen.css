@@ -1,42 +1,36 @@
-/* .chat-container{
-    background-image: url(../img/tech.jpg);
-    height: 100vh;
-    background-size: cover;
-} */
 
-.chat-container .chat-header h1 {
+.chat-container .chat-header h1{
     color: #ffffff;
     text-align: center;
     padding-top: 30px;
     font-size: 50px;
 }
 
-.chat-container {
+.chat-container{
     height: 100vh;
 }
-
-.chat-container .main {
+.chat-container .main{
     height: calc(100% - 64px);
     display: flex;
     flex-direction: row;
     /* phai space no ra neu khong la code css se khong chay */
 }
 
-.main .conversation-detail .conversation-header {
+.main .conversation-detail .conversation-header{
     height: 64px;
     line-height: 64px;
     text-align: center;
     font-size: 32px;
     border-bottom: 0.5px solid #cfcccc;
 }
-
-.header .side-bar {
+.header .side-bar{
     position: absolute;
     color: black;
     display: none;
 }
 
-.chat-container .main .conversation-detail {
+
+.chat-container .main .conversation-detail{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -44,25 +38,25 @@
     width: 85%;
 }
 
-.conversation-detail .list-messages {
+ .conversation-detail .list-messages {
     flex-grow: 1;
 }
-
 #send-messages-form .input-wrapper {
     margin-bottom: 0px;
 }
 
-#send-messages-form .input-wrapper input {
+
+
+#send-messages-form .input-wrapper input{
     border: none;
     border-top: 1px solid #dbdbdb;
     height: 64px;
 }
 
-#send-messages-form {
+#send-messages-form{
     position: relative;
 }
-
-#send-messages-form button {
+#send-messages-form button{
     position: absolute;
     right: 15px;
     top: 20px;
@@ -70,114 +64,97 @@
     background: none;
     color: blue;
     font-size: 24px;
-}
 
-#send-messages-form button:hover {
-    opacity: 0.6
 }
-
-#send-messages-form button:active {
-    transform: scale(1.2);
-}
+#send-messages-form button:hover {opacity: 0.6}
+#send-messages-form button:active {transform: scale(1.2); }
 
 /* css cho tin list-message */
-
-.chat-container .list-messages {
+.chat-container .list-messages{
     padding: 10px;
-    overflow-y: scroll;
-}
+    overflow-y: auto;
 
-.chat-container .list-messages .message-container {
+}
+.chat-container .list-messages .message-container{
     margin-bottom: 3px;
 }
-
-.chat-container .message-container .content {
+.chat-container .message-container .content{
     padding: 7px 10px;
     border-radius: 5px;
     max-width: 40%;
     width: max-content;
+    
 }
 
-.chat-container .message-container.their .content {
+.chat-container .message-container.their .content{
     background: #b9b9b9;
 }
 
-.chat-container .message-container.mine {
-    text-align: right;
+.chat-container .message-container.mine{
+    text-align: right; 
     /* phai co buoc nay thi buoc duoi moi lam duoc */
 }
-
-.chat-container .message-container.mine .content {
+.chat-container .message-container.mine .content{
     background: #383ac2;
     color: #ffffff;
     display: inline-block;
 }
 
-.chat-container .aside-left {
+.chat-container .aside-left{
     width: 15%;
     height: 100%;
     /* background-color: rgb(216, 233, 220); */
     border-right: 1px solid #dbdbdb;
 }
 
-.chat-container .create-conversation {
+.chat-container .create-conversation{
     height: 64px;
-    line-height: 64px;
+    line-height: 64px; 
     border-bottom: 1px solid #dbdbdb;
     text-align: center;
 }
-
-.chat-container .list-conversation .conversation {
+.chat-container .list-conversation .conversation{
     padding: 0px 10px;
     position: relative;
 }
-
-.chat-container .conversation .notification {
+.chat-container .conversation .notification{
     width: 12px;
     height: 12px;
     background: #383ac2;
     border-radius: 50%;
+
     position: absolute;
     right: 8px;
     top: 13px;
     display: none;
 }
-
 /*  */
-
-.chat-container .list-conversation .conversation.current {
+.chat-container .list-conversation .conversation.current{ 
     background-color: #dbdbdb;
 }
-
-.conversation-title {
+.conversation-title{
     overflow: hidden;
 }
-
-#sign-out {
+#sign-out{
     transition: all 4s;
 }
-
-#sign-out:active {
+#sign-out:active{
     transform: scale(1.4);
 }
-
-.chat-container .aside-right {
+.chat-container .aside-right{
     padding: 10px;
     border-left: 1px solid #dbdbdb;
     width: 15%;
     /* overflow: hidden; */
 }
-
-.chat-container .aside-right .user {
+.chat-container .aside-right .user{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-.chat-container #add-user-form {
+.chat-container #add-user-form{
     margin-top: 12px;
 }
-
-.show {
+.show{
     height: 100%;
     position: fixed;
     display: block !important;
@@ -185,7 +162,37 @@
     background: #ffffff;
     width: 30% !important;
 }
-
+@media screen and (max-width: 768px){
+    .aside-right{
+        display: none;
+    }
+    .conversation-num-user{
+        display: none;
+    }
+    .chat-container .list-conversation .conversation{
+        display: flex;
+        border-radius: 50%;
+        border: 1px solid #dbdbdb;
+        width: 32px;
+        height: 32px;
+        align-items: center; 
+        justify-content: center;
+        margin-bottom: 10px;
+        margin: auto;
+    }
+    .side-bar{
+        top: 63px;
+        right: 13px;
+        color: #027bdf;
+        display: block !important;
+    }
+        /* .chat-container .list-conversation{
+        } */
+    .conversation .notification{
+        top: 23px!important; 
+        /* khi bị không cho ghi đè thuộc tính ( tính theo điểm CSS: anh Khiêm nói) -> ta sử dụng !important để ưu tiên thứ tự tính theo điểm */
+    }
+}
 
 .move-side-bar{
     right: 31%;

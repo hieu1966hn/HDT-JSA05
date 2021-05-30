@@ -15,7 +15,7 @@
 
 <body>
     <div id="app">
-        <div class="chat-container">
+        <!-- <div class="chat-container">
             <div class="header">
                 <h1>MindX chat</h1>
             </div>
@@ -75,8 +75,28 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
 
+        <div class="create-conversation-container">
+          <div>MindX chat</div>
+          <div class="main">
+            <form id="create-conversation-form"> 
+                <div>Create a new conversation</div>
+
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Conversation name" name="conversationTitle" >
+                    <div class="error" id="conversation-name-error"></div>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Friend name" name="conversationEmail" >
+                    <div class="error" id="conversation-email-error"></div>
+                </div>
+                <button class="btn" type="submit">Save</button>
+                <button class="btn btn-light" type="button" id="back-to-chat">Cancel</button>
+            </form>
+          </div>
+        </div>
     </div>
 
 

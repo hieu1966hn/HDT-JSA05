@@ -74,3 +74,31 @@ controller.login = (dataLogin) => {
     }
 
 }
+
+controller.createConversationScreen = (newConversation)=>{
+    if(newConversation.conversationTitle.trim() === ""){
+        document.getElementById('conversation-name-error').innerText='Please input conversation Name ...';
+    }
+    else{
+        document.getElementById('conversation-name-error').innerText='';
+    }
+
+    if(newConversation.conversationEmail.trim() === ""){
+        document.getElementById('conversation-email-error').innerText='Please input conversation Email ...';
+    }
+    else{
+        document.getElementById('conversation-email-error').innerText='';
+    }
+
+
+    if(newConversation.conversationTitle.trim() === "" && newConversation.conversationEmail.trim() === ""){
+        const data={
+            title: newConversation.conversationTitle,
+            users: [newConversation.conversationEmail, model.currentUser.email],
+            createdAt: (new Date()).toISOString(), // lay ra thoi gian tao cuoc tro truyen
+            message: []
+        }
+        // sau khi tao xong data chua thong tin can thiet, ta gui no toi firebase thong qua model
+        model.createConversation(data);
+    }
+}
